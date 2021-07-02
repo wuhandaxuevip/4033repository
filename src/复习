@@ -1,0 +1,32 @@
+1.@Configuration + @Bean ：把方法的返回值放入到spring容器中
+    1.搭配使用
+    2.被扫描到
+2.@SpringBootApplication：
+
+扫描到该注解的注释的类所在包及其子包
+在当前springboot工程中，他扫描了 controller，service，config
+@MapperScan(basePackages = {"com.javasm.springbootmybatis.mapper"})
+
+@MapperScan：
+扫描的是 mapper包，并且要求 接口与resources下的xml同包同目录
+
+3.@RequestMapping 可以接收任意类型请求
+@RequestMapping(value = "employee",method=RequestMethod.GET)
+
+4.springboot默认日志级别info，打印时，info以及以上级别会打印
+
+5.@JsonFormat(pattern = "yyyy-MM-dd")对java.util.Date 和LocalDateTime都起作用：我们会抽取，后面讲
+
+6.@Transactional事务，开启事务@EnableTransactionManagement
+
+7.XXXAutoConfiguration ------> XXXXProperties
+   XXXAutoConfiguration可以找到自动配置的相关类
+   XXXXProperties可以找到提示
+8.日志：指定整个项目日志级别时，指定到包即可
+logging:
+    level:
+      com.javasm.springbootmybatis: debug
+9.驼峰命名：可以通过xml进行配置
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
